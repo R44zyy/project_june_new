@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'home.dart';
 
 class LoginPage extends StatelessWidget {
   String username = "admin";
-  String password= 'abc123';
+  String password = 'abc123';
 
   // to fetch values from textfield
   TextEditingController usercontroller = TextEditingController();
@@ -20,11 +21,11 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Padding(
-              padding: EdgeInsets.all(20.0),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
               child: TextField(
                 controller: usercontroller,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.people),
                     hintText: "UserName",
@@ -32,13 +33,13 @@ class LoginPage extends StatelessWidget {
                     labelText: "UserName"),
               ),
             ),
-             Padding(
-              padding: EdgeInsets.only(left: 20, right: 20, bottom: 50),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, bottom: 50),
               child: TextField(
                 controller: passcontroller,
                 obscureText: true,
                 obscuringCharacter: '*',
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.visibility_off_sharp),
                     hintText: "Password",
@@ -46,15 +47,28 @@ class LoginPage extends StatelessWidget {
                     labelText: "Password"),
               ),
             ),
-            ElevatedButton(onPressed: () {
-             if(username == usercontroller.text
-                         &&
-                 password == passcontroller.text) {
-
-               Navigator.of(context).push(
-                   MaterialPageRoute(builder: (context) => Home()));
-             }
-            }, child: const Text("Login"))
+            ElevatedButton(
+                onPressed: () {
+                  if (username == usercontroller.text &&
+                      password == passcontroller.text) {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home()));
+                  } else {
+                    // ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    //   content: Text("inavlid username or password"),
+                    //   backgroundColor: Colors.red,
+                    // ));
+                    Fluttertoast.showToast(
+                        msg: "Invalid Username or Password",
+                        toastLength: Toast.LENGTH_SHORT,
+                        gravity: ToastGravity.BOTTOM_LEFT,
+                       // timeInSecForIosWeb: 1,
+                        backgroundColor: Colors.red,
+                        textColor: Colors.white,
+                        fontSize: 16.0
+                    );
+                  }
+                },
+                child: const Text("Login"))
           ],
         ),
       ),
