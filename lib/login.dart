@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class LoginPage extends StatelessWidget {
+  String username = "admin";
+  String password= 'abc123';
+
+  // to fetch values from textfield
+  TextEditingController usercontroller = TextEditingController();
+  TextEditingController passcontroller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +20,10 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Padding(
+             Padding(
               padding: EdgeInsets.all(20.0),
               child: TextField(
+                controller: usercontroller,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     prefixIcon: Icon(Icons.people),
@@ -22,10 +32,10 @@ class LoginPage extends StatelessWidget {
                     labelText: "UserName"),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 20, right: 20,
-                  bottom: 50),
+             Padding(
+              padding: EdgeInsets.only(left: 20, right: 20, bottom: 50),
               child: TextField(
+                controller: passcontroller,
                 obscureText: true,
                 obscuringCharacter: '*',
                 decoration: InputDecoration(
@@ -36,7 +46,15 @@ class LoginPage extends StatelessWidget {
                     labelText: "Password"),
               ),
             ),
-            ElevatedButton(onPressed: () {}, child: const Text("Login"))
+            ElevatedButton(onPressed: () {
+             if(username == usercontroller.text
+                         &&
+                 password == passcontroller.text) {
+
+               Navigator.of(context).push(
+                   MaterialPageRoute(builder: (context) => Home()));
+             }
+            }, child: const Text("Login"))
           ],
         ),
       ),
