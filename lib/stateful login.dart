@@ -10,6 +10,7 @@ class Login2 extends StatefulWidget {
 
 class _Login2State extends State<Login2> {
   var formkey = GlobalKey<FormState>();
+  bool nopasswordvisibility = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +39,9 @@ class _Login2State extends State<Login2> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 18.0,left: 18,right: 18),
+              padding: const EdgeInsets.only(bottom: 18.0, left: 18, right: 18),
               child: TextFormField(
+                obscureText: nopasswordvisibility,
                 validator: (password) {
                   if (password!.isEmpty || password.length < 6) {
                     return 'field is empty / invalid length';
@@ -48,19 +50,31 @@ class _Login2State extends State<Login2> {
                   }
                 },
                 decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            if(nopasswordvisibility == true){
+                              nopasswordvisibility = false;
+                            }else{
+                              nopasswordvisibility = true;
+                            }
+                          });
+                        },
+                        icon: Icon(nopasswordvisibility == true
+                            ? Icons.visibility_off_sharp
+                            : Icons.visibility)),
+
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(50)),
                     hintText: "Password"),
               ),
             ),
-
             ElevatedButton(
                 onPressed: () {
                   final valid = formkey.currentState!.validate();
                   if (valid) {
                     Navigator.of(context)
-                        .push(MaterialPageRoute(
-                        builder: (context) => Home()));
+                        .push(MaterialPageRoute(builder: (context) => Home()));
                   } else {
                     Fluttertoast.showToast(
                         msg: "Invalid Username or Password",
@@ -76,13 +90,12 @@ class _Login2State extends State<Login2> {
             TextButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(
-                          builder: (context)=>Register()));
-                }, child: const Text("Not a User!!! Register Here!!"))
+                      MaterialPageRoute(builder: (context) => Register()));
+                },
+                child: const Text("Not a User!!! Register Here!!"))
           ],
         ),
       ),
     );
   }
 }
-
