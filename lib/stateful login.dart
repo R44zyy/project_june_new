@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:project_june2/home.dart';
+import 'package:project_june2/signup.dart';
 
 class Login2 extends StatefulWidget {
   @override
@@ -14,37 +15,43 @@ class _Login2State extends State<Login2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LoginPage 2"),
+        title: const Text("LoginPage 2"),
       ),
       body: Form(
         key: formkey, // this key is used to fetch the current state of form
         child: Column(
           children: [
-            TextFormField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50)),
-                  hintText: "Username"),
-              validator: (username) {
-                if (username!.isEmpty || !username.contains('@')) {
-                  return 'field is empty/Invalid';
-                } else {
-                  return null;
-                }
-              },
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: TextFormField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50)),
+                    hintText: "Username"),
+                validator: (username) {
+                  if (username!.isEmpty || !username.contains('@')) {
+                    return 'field is empty/Invalid';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
             ),
-            TextFormField(
-              validator: (password) {
-                if (password!.isEmpty || password.length < 6) {
-                  return 'field is empty / invalid length';
-                } else {
-                  return null;
-                }
-              },
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50)),
-                  hintText: "Password"),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 18.0,left: 18,right: 18),
+              child: TextFormField(
+                validator: (password) {
+                  if (password!.isEmpty || password.length < 6) {
+                    return 'field is empty / invalid length';
+                  } else {
+                    return null;
+                  }
+                },
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50)),
+                    hintText: "Password"),
+              ),
             ),
 
             ElevatedButton(
@@ -65,12 +72,17 @@ class _Login2State extends State<Login2> {
                         fontSize: 16.0);
                   }
                 },
-                child: Text("Login")),
+                child: const Text("Login")),
             TextButton(
-                onPressed: () {}, child: Text("Not a User!!! Register Here!!"))
+                onPressed: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context)=>Register()));
+                }, child: const Text("Not a User!!! Register Here!!"))
           ],
         ),
       ),
     );
   }
 }
+
