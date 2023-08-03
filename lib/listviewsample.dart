@@ -21,13 +21,16 @@ class ListView1 extends StatelessWidget {
               "Shop Here",
               style: GoogleFonts.satisfy(fontSize: 50, color: Colors.pink),
             )),
-            Card(
+            const Card(
+              color: Colors.orange,
               child: ListTile(
-                title: const Text("Shoe"),
-                subtitle: const Text("\$ 780"),
-                leading: Image.network(
-                    "https://i02.appmifile.com/417_operator_in/17/08/2022/0d6e11e0b3d93f29d2877c77b28d9102!800x800!85.jpg"),
-                trailing: const Icon(Icons.shopping_cart),
+                title: Text("Shoe"),
+                subtitle: Text("\$ 780"),
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      "https://i02.appmifile.com/417_operator_in/17/08/2022/0d6e11e0b3d93f29d2877c77b28d9102!800x800!85.jpg"),
+                ),
+                trailing: Icon(Icons.shopping_cart),
               ),
             ),
             const Card(
