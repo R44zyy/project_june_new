@@ -19,7 +19,9 @@ class ListView1 extends StatelessWidget {
             Center(
                 child: Text(
               "Shop Here",
-              style: GoogleFonts.satisfy(fontSize: 50, color: Colors.pink),
+              style: GoogleFonts.satisfy(
+                  fontSize: 50,
+                  color: Colors.pink),
             )),
             const Card(
               color: Colors.orange,
