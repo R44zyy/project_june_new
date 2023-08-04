@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: ListView2(),
   ));
 }
@@ -50,7 +51,21 @@ class ListView2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.teal,
         title: const Text("ListView2"),
+        actions: [
+          Icon(Icons.camera_alt),
+          SizedBox(width: 15,),
+          Icon(Icons.search),
+          PopupMenuButton(itemBuilder: (context){
+            return [
+              PopupMenuItem(child: Text("Settings")),
+              PopupMenuItem(child: Text("New Group")),
+              PopupMenuItem(child: Text("Privacy")),
+              PopupMenuItem(child: Text("BroadCast")),
+            ];
+          })
+        ],
       ),
       body: ListView(
         children: List.generate(
