@@ -54,11 +54,11 @@ class ListView2 extends StatelessWidget {
         backgroundColor: Colors.teal,
         title: const Text("ListView2"),
         actions: [
-          Icon(Icons.camera_alt),
-          SizedBox(width: 15,),
-          Icon(Icons.search),
+          const Icon(Icons.camera_alt),
+          const SizedBox(width: 15,),
+          const Icon(Icons.search),
           PopupMenuButton(itemBuilder: (context){
-            return [
+            return const[
               PopupMenuItem(child: Text("Settings")),
               PopupMenuItem(child: Text("New Group")),
               PopupMenuItem(child: Text("Privacy")),
