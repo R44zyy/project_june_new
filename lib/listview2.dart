@@ -7,6 +7,45 @@ void main() {
 }
 
 class ListView2 extends StatelessWidget {
+  var name = [
+    "Food 1",
+    "Food 2",
+    "Food 3",
+    "Food 4",
+    "Food 5",
+    "Food 6",
+    "Food 7",
+    "Food 8",
+    "Food 9",
+    "Food 10"
+  ];
+
+  var image = [
+    "assets/images/donut.png",
+    "assets/images/hamburger.png",
+    "assets/images/pizza.png",
+    "assets/images/ramen.png",
+    "assets/images/salad.png",
+    "assets/images/apple.png",
+    "assets/images/grapes.png",
+    "assets/images/bibimbap.png",
+    "assets/images/donut.png",
+    "assets/images/hamburger.png",
+  ];
+  var price = [130, 200, 100, 30, 470, 270, 340, 120, 150, 210];
+  var colors = [
+    Colors.purple,
+    Colors.indigo,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+    Colors.orange,
+    Colors.red,
+    Colors.yellow,
+    Colors.orange,
+    Colors.red,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,15 +53,39 @@ class ListView2 extends StatelessWidget {
         title: const Text("ListView2"),
       ),
       body: ListView(
-        children: List.generate( 100,
-            (index) => const Card(
+        children: List.generate(
+            10,
+            (index) => Card(
+             // color: colors[index],
                   child: ListTile(
-                    title: Text("Item 1"),
-                    subtitle: Text("\$250"),
+                    title: Text(name[index]),
+                    subtitle: Text("\$ ${price[index]}"),
                     leading: CircleAvatar(
-                      backgroundImage:
-                          AssetImage("assets/images/green.jpg"),
+                      backgroundImage: AssetImage(image[index]),
                     ),
+                    trailing: const Wrap(
+                      direction: Axis.vertical,
+                      children: [
+                        Text("1.20"),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        CircleAvatar(
+                          minRadius: 8,
+                          maxRadius: 10,
+                          backgroundColor: Colors.green,
+                          child: Text("2"),
+                        )
+                      ],
+                    ),
+
+                    // Row(
+                    //   mainAxisSize: MainAxisSize.min,
+                    //   children: [
+                    //     Icon(Icons.favorite_border),
+                    //     Icon(Icons.shopping_cart),
+                    //   ],
+                    // ),
                   ),
                 )),
       ),
