@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_june1/Gridex/gridview%201.dart';
-import 'package:project_june1/listvieww/listview%20builder.dart';
-import 'package:project_june1/listvieww/listview%20custom.dart';
-import 'package:project_june1/stateful%20login%20with%20validation.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,10 +14,10 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int index = 0;
  var screens  = [
-   Login2(),
-   Listview_with_builder(),
-   ListView_Custom(),
-   GridView1(),
+   // Login2(),
+   // Listview_with_builder(),
+   // ListView_Custom(),
+   // GridView1(),
  ];
   @override
   Widget build(BuildContext context) {
