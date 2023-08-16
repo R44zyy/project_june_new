@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:project_june1/listvieww/listview%20builder.dart';
-import 'package:project_june1/listvieww/listview%20custom.dart';
-import 'package:project_june1/signup%20page.dart';
-import 'package:project_june1/stateful%20login%20with%20validation.dart';
+
 void main(){
   runApp(MaterialApp(home: TabEx(),));
 }
@@ -47,10 +44,10 @@ class TabEx extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
-              Listview_with_builder(),
-              SignUp(),
-              Login2(),
-              ListView_Custom(),
+              // Listview_with_builder(),
+              // SignUp(),
+              // Login2(),
+              // ListView_Custom(),
 
             ],
           ),
