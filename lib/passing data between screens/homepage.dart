@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:project_june1/passing%20data%20between%20screens/detailspage.dart';
-import 'package:project_june1/passing%20data%20between%20screens/dummy%20data.dart';
+
+import 'detailspage.dart';
+import 'dummy data.dart';
 
 void main() {
   runApp(MaterialApp(

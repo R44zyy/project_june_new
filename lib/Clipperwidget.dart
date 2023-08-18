@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -38,7 +39,8 @@ class ClipperEx extends StatelessWidget {
                   "https://images.unsplash.com/photo-1590523330785-fb01d1b5496c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"),
             ),
             ClipPath(
-              child: Image.network("src"),
+              clipper: MessageClipper(),
+              child: Image.network("https://images.unsplash.com/photo-1498447817931-2edda1605b97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80"),
             )
           ],
         ),
