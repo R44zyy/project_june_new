@@ -37,6 +37,8 @@ dependencies:
   lottie: ^2.6.0
   carousel_slider:
   webview_flutter:
+  rive:
+  flutter_custom_clippers:
 
 
   # The following adds the Cupertino Icons font to your application.
