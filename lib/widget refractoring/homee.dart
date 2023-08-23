@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_june1/widget%20refractoring/NewWidget.dart';
+
+import 'NewWidget.dart';
 
 void main() {
   runApp(MaterialApp(

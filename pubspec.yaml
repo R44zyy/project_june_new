@@ -40,6 +40,7 @@ dependencies:
   rive:
   flutter_custom_clippers:
   introduction_screen:
+  readmore:
 
 
   # The following adds the Cupertino Icons font to your application.
