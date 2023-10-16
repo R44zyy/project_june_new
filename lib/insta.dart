@@ -16,7 +16,7 @@ class Instaa extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 100,),
+            SizedBox(height: 100),
             ShaderMask(
                 blendMode: BlendMode.srcIn,
                 shaderCallback: (Rect bounds) => const LinearGradient(
@@ -35,7 +35,7 @@ class Instaa extends StatelessWidget {
             SizedBox(height: 200,),
             Text("From",style: TextStyle(color: Colors.white70),),
             SizedBox(height: 10,),
-            Text("Meta",style: TextStyle(color: Colors.white70),)
+            Text("Meta",style: TextStyle(color: Colors.white70,fontSize: 30,fontStyle: FontStyle.italic),)
           ],
         ),
       ),

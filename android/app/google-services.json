@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "424033071901",
+    "project_id": "myprojects12-96313",
+    "storage_bucket": "myprojects12-96313.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424033071901:android:28785262220ca4a499a7f4",
+        "android_client_info": {
+          "package_name": "com.luminar.project_june2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCMj4g6QPcpMAZTAAVZIoqwJlaiFJj1tI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

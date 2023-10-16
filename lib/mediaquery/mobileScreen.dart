@@ -16,7 +16,7 @@ class MobileScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(8),
               child: AspectRatio(
-                aspectRatio: 16 / 9,
+                aspectRatio: 16 / 4,
                 child: Container(
                   color: Colors.yellow,
                 ),

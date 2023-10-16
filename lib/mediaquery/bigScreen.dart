@@ -49,13 +49,13 @@ class BigScreen extends StatelessWidget {
             ),
 
             // second column
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Container(
-            //     width: 200,
-            //     color: Colors.deepPurple[300],
-            //   ),
-            // )
+             Padding(
+               padding: const EdgeInsets.all(8.0),
+              child: Container(
+                 width: 200,
+                 color: Colors.deepPurple[300],
+               ),
+             )
           ],
         ),
       ),
