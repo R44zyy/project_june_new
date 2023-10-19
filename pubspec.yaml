@@ -54,6 +54,7 @@ dependencies:
   scrollable_positioned_list: ^0.3.8
   internet_connection_checker: ^1.0.0+1
   top_snackbar_flutter: ^3.1.0
+  sliding_clipped_nav_bar:
 
 
 

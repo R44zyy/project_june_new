@@ -56,4 +56,6 @@ class Login extends StatelessWidget {
              },
               child: const Text("Not a User? Register Here!!!"))
     ]));
-  }}
+  }
+
+  void checkUserExist(BuildContext context, List<User> users) {}}
